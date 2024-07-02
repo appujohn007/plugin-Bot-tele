@@ -1,7 +1,5 @@
 from pyrogram import Client, filters
 
+@Client.on_message(filters.command("start") & filters.private)
 def start(client, message):
     message.reply_text('Hello! Welcome to the bot.')
-
-def register(app: Client):
-    app.add_handler(filters.command("start") & filters.private, start)
